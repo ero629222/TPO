@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #010b15;
+    padding: 20px;
+    background-color: #b1b8f5;
+    }
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Hacemos dos columnas de igual tamaño */
+    align-items:center ;
+    gap: 20px; /* definimos el espacio entre columnas */
+}
+
+.header-container h1 {
+    grid-column: 1 / 2 ; /* Colocar el h1 en la primera columna */
+    white-space: nowrap; /* Hace que el texto se ajuste a una sola línea */
+    margin-bottom: 10px; /* Añadimos además margen inferior para separar del siguiente contenido que viene abajo */
+}
+
+.header-container img {
+    grid-column: 2 / 3; /* Colocamos la imagen en la segunda columna */
+    width: 50%; /* Ajustamos al 100% del ancho de la columna */
+    height: auto; /* Mantenemos la proporción de la imagen de manera automática entre ancho y alto */
+    border: 2px solid rgb(65, 6, 175); /* Agregamos un borde de 2px de grueso y de color violeta */
+}
+
+select, button, #ingredientInfo {
+    margin-top: 10px;  /* Ajustamos el margen superior para separar del título */
+    display: block;
+}

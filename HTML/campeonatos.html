@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style_campeonatos.css"/>
+    <title>Ejemplo de solicitud a API REST</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="text">
+            <h1>Ingredientes para tu trago mientras disfrutas del Partido!</h1>
+        </div>
+            <img src="../imagenes/tragos-152-152.png"  alt="Trago" class="drink-image" >
+    </div>
+
+    <!-- Dropdown para seleccionar la URL -->
+    <select id="ingredientSelector">
+            
+        <option value="https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=552">Elderflower cordial</option>
+        <br>
+        <option value="https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=553">Rosso Vermouth</option>
+        <br>
+        <option value="https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=554">Creme de Violette</option>
+        <br>
+    </select> 
+        <br>
+        <br>
+    <!-- Botón para hacer la solicitud -->
+    <button onclick="fetchSelectedIngredient()">Obtener Información del Trago</button>
+
+    <!-- Elemento donde se mostrará la información -->
+    <div id="ingredientInfo"></div>
+
+    <script>
+        // Función para hacer la solicitud a la URL seleccionada
+        function fetchSelectedIngredient() {
+            // Obtener el valor seleccionado del dropdown (descolgable)
+            const url = document.getElementById('ingredientSelector').value;
+
+            // Hacemos la llamada a la API
+            fetch(url)
+                .then(response => {
+                    // Verificar si la respuesta es exitosa
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    // Convertir la respuesta en JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Procesar y extraer los valores deseados del JSON
+                    const ingredient = data.ingredients[0];
+                    const idIngredient = ingredient.idIngredient;
+                    const strIngredient = ingredient.strIngredient;
+                    const strDescription = ingredient.strDescription;
+                    const strType = ingredient.strType;
+                    const strAlcohol = ingredient.strAlcohol;
+                    const strABV = ingredient.strABV;
+
+                    // Mostrar los valores en el DOM
+                    document.getElementById('ingredientInfo').innerHTML = `
+                        <p><strong>Ingrediente:</strong> ${strIngredient}</p>
+                        <p><strong>Descripción:</strong> ${strDescription}</p>
+                        <p><strong>Tipo:</strong> ${strType}</p>
+                        <p><strong>Alcohol:</strong> ${strAlcohol}</p>
+                        <p><strong>ABV:</strong> ${strABV}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Error al obtener los datos:', error);
+                    document.getElementById('ingredientInfo').innerHTML = `<p>Error al obtener los datos: ${error.message}</p>`;
+                });
+        }
+    </script>
+    <br>
+    <br>
+
+    <footer>
+        <a href="../historia.html"><h2>¡Ahora sí...mirá el partido!</h2></a>
+        <p>Elegí alguno de los disponíbles según tu zona horaria</p>
+        <br>
+        <br>
+        <a href="../Club.html">Volver al inicio</a>
+        <p>Derechos de autor © 2024 Club de Fútbol :: Grupo 9</p>
+    </footer>
+</body>
+
+</html>

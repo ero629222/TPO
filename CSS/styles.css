@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+  }
+
+.tabs {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin: 20px;
+ }
+
+.tabs button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #ddd;
+}
+
+.tabs button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    
+}
+
+header, nav, main, footer {
+    margin: 20px;
+}
+
+h1 {
+    color: #c52020;
+}
+
+h2 {
+    color: #06042c;
+}
+
+/* Estilos específicos */
+#club {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+

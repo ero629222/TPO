@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+   }
+
+header, nav, main, footer {
+    margin: 20px;
+}
+
+header h1 {
+    color: #800404 !important; /* Color rojo oscuro */
+}
+
+h1 {
+    color: #800404 !important;
+    margin: 20px;
+}

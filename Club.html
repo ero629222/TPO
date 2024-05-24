@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club de Fútbol</title>
+    <!-- Agregamos estas líneas en el <head> para usar bootstrap aunque no se van a usar acá-->
+    <!-- Incluyendo jQuery primero-->
+    <!-- Luego, Bootstrap JavaScript -->
+
+    <link />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/></script-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Agrega la referencia al favicon -->
+    <link rel="icon" type="image/png" href="imagenes/fav/favicon.ico" />
+
+    <!-- Script para las solapas -->
+    <script src="js/funciones.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>CLUBES DE FÚTBOL</h1>
+    </header>
+
+    <div class="tabs">
+      <button class="tablink" onclick="openPage('page1', this, 'red')">
+        Inicio
+      </button>
+      <button class="tablink" onclick="openPage('page2', this, 'green')">
+        Página 2
+      </button>
+      <button class="tablink" onclick="openPage('page3', this, 'blue')">
+        Página 3
+      </button>
+      <button class="tablink" onclick="openPage('page4', this, 'orange')">
+        Página 4
+      </button>
+      <button class="tablink" onclick="openPage('page5', this, 'blue')">
+        Registración
+      </button>
+      <button class="tablink" onclick="openPage('page6', this, 'red')">
+        Contáctenos
+      </button>
+    </div>
+
+    <div id="page1" class="tabcontent">
+      <h3>Inicio</h3>
+      <p>Bienvenido al sitio web de los Clubes de Fútbol. Aquí encontrarás información variada sobre equipos, partidos y eventos.</p>
+    </div>
+
+    <div id="page2" class="tabcontent">
+      <h3>Página 2</h3>
+      <p>Contenido de la página 2.</p>
+    </div>
+
+    <div id="page3" class="tabcontent">
+      <h3>Página 3</h3>
+      <p>Contenido de la página 3.</p>
+    </div>
+
+    <div id="page4" class="tabcontent">
+      <h3>Página 4</h3>
+      <p>Contenido de la página 4.</p>
+    </div>
+
+    <div id="page5" class="tabcontent">
+      <h3>Registración</h3>
+      <p>Contenido de la página 5.</p>
+    </div>
+
+    <div id="page6" class="tabcontent">
+        <!--nada-->
+    </div>
+
+    <nav>
+      <!-- Incluir enlaces a otras páginas -->
+      <ul>
+        <li><a href="historia.html">Historia</a></li>
+        <br>
+        <li><a href="HTML\campeonatos.html">Campeonatos</a></li>
+        <!-- Agregar más enlaces necesarios -->
+      </ul>
+    </nav>
+
+    <main>
+      <section id="club">
+        <!-- Contenido sobre el club -->
+        <h2>Nuestro Club</h2>
+        <p>Información sobre nuestro club qué hacemos y ofrecemos...</p>
+      </section>
+      <!-- Agregar más secciones si es una página única -->
+    </main>
+    <footer>
+      <p>Derechos de autor © 2024 Clubes de Fútbol :: Grupo 9 curso Python</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <link rel="stylesheet" href="CSS\style_registracion.css" />
+    <script src="js/funciones.js"></script>
+
+
+</head>
+<body>
+    <div class="header-container">
+        <h1>Formulario de Registro</h1>
+        <img src="imagenes/fav/apple-icon-114x114.png" alt="Usuario" width="50">
+    </div>
+    <form action="" method="POST" id="registrationForm" onsubmit="saveUser(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+        <br>
+        <label for="genero" class="required">Género</label>
+        <br>
+        <select id="genero" name="genero" data-alias="" required>
+            <option value="masculino" >Masculino</option>     
+            <option value="femenino" >Femenino</option>     
+            <option value="nobinario" >No Binario</option>     
+            <option value="nodecirlo" >Prefiero no decirlo</option>     
+        </select>
+        <br>
+        <br>
+        <label for="mail">Correo electrónico:</label>
+        <input type="email" id="mail" name="mail" required><br>
+        
+        <label for="usuario">Nombre de usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br>
+        <br>
+        <br>
+        <label class="container">Comprendo y acepto los <a href="HTML\terminos.html">T&C.</a> </href> 
+            <input type="checkbox" id="checkbox1" required>
+            <span class="checkmark"></span>
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Registrarse">
+        <br>
+        <br>
+        <button type="button" onclick="recoverPassword()">Recuperar Contraseña</button>
+    </form>
+</body>
+</html>

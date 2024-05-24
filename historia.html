@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubes de Fútbol</title>
+    <link rel="icon" type="image/png" href="imagenes/fav/favicon.ico">
+    <link rel="stylesheet" href="CSS/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style_historia.css" /> 
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="text-center mb-5" style="color: #800404;"> <!--no toma el cambio de color por estar embebida en bootstrap -->
+        <h1><a href="Club.html">CLUBES DE FÚTBOL</a></h1>
+    </header>
+    <nav class="text-center mb-5">
+        <ul class="list-unstyled">
+            <li><a href="HTML/comentarios.html">Detalles</a></li>
+            <br>
+            <p>Escribimos los que haga falta sobre el club y abajo un video alusivo?</p>
+            <br>
+            <!-- Agregamos enlace para consumir la API de videos ejemplo youtube -->
+            <li><a href="#" id="videos-link">Información y Videos:</a></li>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <iframe src="https://www.scorebat.com/" width="400" height="300"></iframe>
+                        <br>
+                        <br>
+                        <!--iframe src='https://www.scorebat.com/embed/g/1393944/' frameborder='0' width='560' height='650' allowfullscreen allow='autoplay; fullscreen' style='width:100%;overflow:hidden;' class='_scorebatEmbeddedPlayer_'></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script-->
+                        <iframe
+                            src="https://www.scorebat.com/embed/?token=MTU2OTE5XzE3MTUxMjQxNzRfYWZmNjQ2YzgwNTUwNjExMzEyMTYyZTY5ODhlNjk4NWY3YmM4OWNlYQ=="
+                            frameborder="0" width="100%" height="500" allowfullscreen
+                            allow='autoplay; fullscreen'></iframe>
+
+                         <!---script para cargar contenido embebido
+                           1 Se define una función anónima que toma tres parámetros: d, s, e id. Esta función se ejecuta inmediatamente después de ser definida.
+                           2 Se declaran dos variables locales js y fjs. fjs se asigna al primer elemento del documento (d) que coincida con la etiqueta especificada por el segundo parámetro (s), que suele ser 'script'. Esto se hace para obtener el primer script que se encuentra en el documento.
+                           3 Se verifica si existe un elemento con el ID especificado por el tercer parámetro (id) en el documento. Si existe, la función termina aquí y no hace nada más.
+                           4 Se crea un nuevo elemento HTML del tipo especificado por s (normalmente 'script'). Se asigna el ID especificado por id a este nuevo elemento.
+                           5 Se establece la fuente del script creado (js) como el URL proporcionado. Este URL suele ser una fuente externa, en este caso, 'https://www.scorebat.com/embed/embed.js?v=arrv'.
+                           6 Se inserta el nuevo script (js) antes del primer script (fjs) en el documento. Esto es comúnmente utilizado para cargar scripts externos antes de que la página esté completamente cargada.
+                           7 Finalmente, se cierra la función anónima y se ejecuta pasando los argumentos correspondientes: document (el documento actual), 'script' (el tipo de elemento a crear) y 'scorebat-jssdk' (el ID del script). Esto carga el script externo proporcionado en el documento HTML.-->
+                                                    
+                        <script>(function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                                (document, 'script', 'scorebat-jssdk'));
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </nav>
+
+    <main class="flex-grow-1"> 
+        <section id="club" class="text-center">
+            <h2>El Club 1</h2>
+            <p>Información extra sobre el club 1</p>
+        </section>
+    </main>
+
+    <!-- Agregamos un audio propio -->
+    <article class="text-center mb-5">
+        <h1>Audios memorables</h1>
+        <!-- 
+            controls: muestra los controles de reproduccion y pausa 
+            loop autoplay: hace que el audio se vuelva a reproducir en forma consecutiva
+            formatos de audio: mp3, ogg y wav
+        -->
+        <audio controls id="miaudio" loop autoplay>
+            <source src="audios\FOTINT0.mp3" type="audio/mpeg">
+            <source src="audios\FOTINT0.mp3" type="audio/ogg">
+            <source src="audios\FOTINT0.mp3" type="audio/wav">
+            <!--Cualquier texto dentro del entre <audio> y </ audio> será mostrado en los navegadores que no admitan la <audio> etiqueta.-->
+            <p>Tu navegador no soporta este archivo de audio. Puedes descargarlo de aquí<a
+                    href="audios\FOTINT0.mp3">aquí</a></p>
+        </audio>
+        <!-- mediante funciones de javascript los botones funcionan para reproducir o pausar -->
+        <!--input type="button" value="PLAY" onClick="document.getElementById('miaudio').play();"-->
+        <!--input type="button" value="PAUSA" onClick="document.getElementById('miaudio').pause();"-->
+    </article>
+    <article>
+        <script src="scripts.js"></script>
+
+        <footer class="mt-auto text-center">
+            <a href="Club.html">Volver al inicio</a>
+            <p>Derechos de autor © 2024 Club de Fútbol :: Grupo 9</p>
+        </footer>
+
+        <script src="CSS/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
