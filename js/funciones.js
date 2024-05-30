@@ -1,5 +1,5 @@
   
-function openPage(pageName, elmnt, color) 
+function openPage(pageName, elmnt) 
 {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
